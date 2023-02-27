@@ -1,0 +1,63 @@
+{
+  "name": "parental-leave-tutorial-skill",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@matterway/assistant-design-system": "^6.0.0",
+    "@matterway/assistant-skill-scripts": "1.15.0",
+    "@matterway/background-react": "^5.19.4",
+    "@matterway/connection-manager": "^1.19.4",
+    "@matterway/sdk": "^0.1.3",
+    "@matterway/skill-debugger": "^2.18.4",
+    "@matterway/skill-scripts": "^1.22.4",
+    "@matterway/types": "^0.18.4",
+    "@matterway/utils-skills": "^0.8.4",
+    "chai": "^4.3.6",
+    "i18next": "^22.4.9",
+    "lodash": "^4.17.21",
+    "puppeteer-core": "^15.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^12.1.4",
+    "styled-components": "^5.3.1"
+  },
+  "scripts": {
+    "start": "skill-scripts start",
+    "build": "skill-scripts build",
+    "build:dev": "skill-scripts build --mode=development",
+    "test": "skill-scripts test",
+    "lint": "eslint '**/*.{ts,tsx}'",
+    "format": "prettier . --write"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.0",
+    "@testing-library/react": "^10.4.3",
+    "@testing-library/user-event": "^12.0.11",
+    "@types/chai": "^4.3.3",
+    "@types/jest": "^25.2.3",
+    "@types/lodash": "^4.14.175",
+    "@types/node": "^16.10.5",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@types/styled-components": "^5.1.15",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "eslint": "^8.12.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": ">=10",
+    "prettier": "^2.6.2",
+    "tslint": "^6.1.3",
+    "typescript": "^4.8.4"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --ignore-unknown"
+    ]
+  }
+}
