@@ -1,6 +1,6 @@
 import {EmployeeData} from './extractRequestDataStep';
 import {ChildData} from './enterChildDataStep';
-import {Context, waitForSelector, click, fill} from '@matterway/sdk';
+import {Context, fill, click, pressEnterKey} from '@matterway/sdk';
 
 export async function updateFamilyMembersStep(
   ctx: Context,
@@ -14,11 +14,12 @@ export async function updateFamilyMembersStep(
 
   // Navigate
   await page.goto('https://employee-master-data.demo.matterway.io');
-  await waitForSelector(ctx, '#employee-id');
-  await fill(ctx, '#employee-id', `${data.employee.id}\n`);
+  await fill(ctx, '#employee-id', `${data.employee.id}`);
+  await pressEnterKey(ctx);
 
   // Open transaction
-  await fill(ctx, '#transaction-id', '0021\n');
+  await fill(ctx, '#transaction-id', '0021');
+  await pressEnterKey(ctx);
 
   // Fill form
   await fill(ctx, '[name="memberType"]', '2');

@@ -1,6 +1,6 @@
 import {EmployeeData} from './extractRequestDataStep';
 import {LeaveData} from './enterLeaveDataStep';
-import {Context, waitForSelector, fill, click} from '@matterway/sdk';
+import {Context, fill, click, pressEnterKey} from '@matterway/sdk';
 
 export async function updateAbsenceQuotaStep(
   ctx: Context,
@@ -14,15 +14,14 @@ export async function updateAbsenceQuotaStep(
 
   // Navigate
   await page.goto('https://employee-master-data.demo.matterway.io');
-  await waitForSelector(ctx, '#employee-id');
-  await fill(ctx, '#employee-id', `${data.employee.id}\n`);
+  await fill(ctx, '#employee-id', `${data.employee.id}`);
+  await pressEnterKey(ctx);
 
   // Open transaction
-  await waitForSelector(ctx, '#transaction-id');
-  await fill(ctx, '#transaction-id', '2006\n');
+  await fill(ctx, '#transaction-id', '2006');
+  await pressEnterKey(ctx);
 
   // Fill form
-  await waitForSelector(ctx, '[name="startDate"]');
   await fill(ctx, '[name="startDate"]', data.leave.startDate);
   await fill(ctx, '[name="endDate"]', data.leave.endDate);
 
