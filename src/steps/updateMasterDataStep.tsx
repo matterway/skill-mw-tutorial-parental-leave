@@ -22,7 +22,7 @@ export async function updateMasterDataStep(
   const browser = ctx.browser;
   const backgroundBrowser = await connectToMinimisedWindow(browser);
 
-  await runJobsWithProgressList(
+  const errors = await runJobsWithProgressList(
     ctx,
     [
       {
@@ -52,6 +52,12 @@ export async function updateMasterDataStep(
       concurrency: 4,
     },
   );
+
+  errors.forEach((err) => {
+    if (typeof err !== 'undefined') {
+      throw err;
+    }
+  });
 
   // Disconnect the browser after its job is done.
   await backgroundBrowser.disconnect();
