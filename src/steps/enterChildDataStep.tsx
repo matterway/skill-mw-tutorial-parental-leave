@@ -17,7 +17,6 @@ export async function enterChildDataStep(
   },
 ) {
   console.log('enterchildData step', data);
-  const {page, render, signal} = ctx;
 
   showProgress(ctx, 'Open the birth certificate...');
 
