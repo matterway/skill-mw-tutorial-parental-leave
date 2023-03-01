@@ -1,7 +1,7 @@
 import {EmployeeData} from './extractRequestDataStep';
 import {ChildData} from './enterChildDataStep';
-import {Context, fill, click} from '@matterway/sdk';
-import {dispatchEnter, setSelect} from 'shared/utils';
+import {Context, fill, click, setProperty} from '@matterway/sdk';
+import {dispatchEnter} from 'shared/utils';
 
 export async function updateFamilyMembersStep(
   ctx: Context,
@@ -23,7 +23,7 @@ export async function updateFamilyMembersStep(
   await dispatchEnter(ctx, '#transaction-id');
 
   // Fill form
-  await setSelect(ctx, '[name="memberType"]', '2');
+  await setProperty(ctx, '[name="memberType"]', 'value', '2');
   await fill(ctx, '[name="firstName"]', data.child.firstName);
   await fill(ctx, '[name="lastName"]', data.child.lastName);
   await fill(ctx, '[name="birthDate"]', data.child.birthDate);
