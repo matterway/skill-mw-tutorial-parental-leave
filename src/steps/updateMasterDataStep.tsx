@@ -49,7 +49,7 @@ export async function updateMasterDataStep(
       },
     ],
     {
-      concurrency: 4,
+      concurrency: 2,
     },
   );
 
