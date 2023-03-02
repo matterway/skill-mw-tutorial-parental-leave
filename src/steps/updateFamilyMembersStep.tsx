@@ -32,4 +32,6 @@ export async function updateFamilyMembersStep(
 
   // Save and submit
   await click(ctx, 'form button');
+
+  await page.close();
 }

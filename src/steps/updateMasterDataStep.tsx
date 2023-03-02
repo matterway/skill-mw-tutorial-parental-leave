@@ -59,8 +59,5 @@ export async function updateMasterDataStep(
     }
   });
 
-  // Disconnect the browser after its job is done.
-  await backgroundBrowser.disconnect();
-
   await successStep(ctx);
 }

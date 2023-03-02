@@ -28,4 +28,6 @@ export async function updateAbsenceQuotaStep(
 
   // Save and submit
   await click(ctx, 'form button');
+
+  await page.close();
 }
