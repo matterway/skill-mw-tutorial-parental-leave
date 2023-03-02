@@ -27,7 +27,7 @@ export async function updateMasterDataStep(
     [
       {
         title: 'updateFamilyMembersStep',
-        handler: async (ctx: Context) => {
+        handler: async (ctx) => {
           const bgCtx = {
             ...ctx,
             browser: backgroundBrowser,
@@ -38,7 +38,7 @@ export async function updateMasterDataStep(
       },
       {
         title: 'updateAbsenceQuotaStep',
-        handler: async (ctx: Context) => {
+        handler: async (ctx) => {
           const bgCtx = {
             ...ctx,
             browser: backgroundBrowser,
