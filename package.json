@@ -1,6 +1,6 @@
 {
   "name": "parental-leave-tutorial-skill",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@matterway/assistant-design-system": "^6.0.0",
