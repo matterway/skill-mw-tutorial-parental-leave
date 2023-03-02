@@ -1,6 +1,6 @@
 {
   "start": {
-    "text": "Assistant will help you process this task.",
+    "text": "Assistant will help you record this Parental Leave, and update the family members and leave quota in the master data system.",
     "proceedButton": "Let's go!"
   },
   "success": {
