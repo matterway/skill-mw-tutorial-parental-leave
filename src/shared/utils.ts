@@ -13,11 +13,3 @@ export async function dispatchEnter(ctx: Context, selector: string) {
     document.querySelector(selector)?.dispatchEvent(keyboardEvent);
   }, selector);
 }
-
-export async function setSelect(ctx: Context, selector: string, value: string) {
-  await waitForSelector(ctx, selector);
-  return await ctx.page.evaluate((selector) => {
-    const select = document.querySelector(selector) as HTMLSelectElement;
-    select.value = value;
-  }, selector);
-}
