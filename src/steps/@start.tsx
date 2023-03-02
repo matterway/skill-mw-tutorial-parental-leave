@@ -12,8 +12,8 @@ export async function startStep(ctx: Context) {
   await showMessage(ctx, {
     title: manifest.name,
     description: manifest.description,
-    text: 'Assistant will help you record this Parental Leave, and update the family members and leave quota in the master data system.',
-    buttons: [{text: "Let's go!", value: 'ok'}],
+    text: t('start.text'),
+    buttons: [{text: t('start.proceedButton'), value: 'ok'}],
   });
 
   return await extractRequestDataStep(ctx);
