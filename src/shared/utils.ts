@@ -1,4 +1,4 @@
-import {Context, waitForSelector} from '@matterway/sdk';
+import {Context} from '@matterway/sdk';
 
 export async function dispatchEnter(ctx: Context, selector: string) {
   return await ctx.page.evaluate((selector) => {
