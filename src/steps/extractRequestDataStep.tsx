@@ -1,11 +1,9 @@
 import {Context, getValue, showProgress, waitForSelector} from '@matterway/sdk';
-
+import {enterLeaveDataStep} from './enterLeaveDataStep';
 export interface EmployeeData {
   id: string;
   fullName: string;
 }
-
-import {enterLeaveDataStep} from './enterLeaveDataStep';
 
 export async function extractRequestDataStep(ctx: Context) {
   console.log('step: extractRequestDataStep');

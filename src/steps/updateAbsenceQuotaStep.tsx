@@ -1,6 +1,6 @@
 import {EmployeeData} from './extractRequestDataStep';
 import {LeaveData} from './enterLeaveDataStep';
-import {Context, fill, click, pressEnterKey} from '@matterway/sdk';
+import {Context, fill, click} from '@matterway/sdk';
 import {dispatchEnter} from 'shared/utils';
 
 export async function updateAbsenceQuotaStep(
