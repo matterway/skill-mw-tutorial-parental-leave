@@ -29,5 +29,6 @@ export async function updateAbsenceQuotaStep(
   // Save and submit
   await click(ctx, 'form button');
 
-  await page.close();
+  //comment to prevent CDP error
+  //await page.close();
 }

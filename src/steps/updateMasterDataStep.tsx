@@ -1,7 +1,11 @@
 import {updateFamilyMembersStep} from './updateFamilyMembersStep';
 import {updateAbsenceQuotaStep} from './updateAbsenceQuotaStep';
-import {Context, showProgress, runJobsWithProgressList} from '@matterway/sdk';
-import {connectToMinimisedWindow} from '@matterway/connection-manager';
+import {
+  Context,
+  showProgress,
+  runJobsWithProgressList,
+  createBackgroundPage,
+} from '@matterway/sdk';
 import {EmployeeData} from './extractRequestDataStep';
 import {LeaveData} from './enterLeaveDataStep';
 import {ChildData} from './enterChildDataStep';
@@ -18,9 +22,10 @@ export async function updateMasterDataStep(
   // This might take a while. let's show progress, for good measure
   await showProgress(ctx, 'Starting background tasks...');
 
-  // Create new background connection
-  const browser = ctx.browser;
-  const backgroundBrowser = await connectToMinimisedWindow(browser);
+  // const bgCtx = (await createBackgroundPage(ctx)) as Context;
+  // await updateFamilyMembersStep(bgCtx, data);
+  // const bgCtx2 = (await createBackgroundPage(ctx)) as Context;
+  // await updateAbsenceQuotaStep(bgCtx2, data);
 
   const errors = await runJobsWithProgressList(
     ctx,
@@ -28,23 +33,19 @@ export async function updateMasterDataStep(
       {
         title: 'updateFamilyMembersStep',
         handler: async (ctx) => {
-          const bgCtx = {
-            ...ctx,
-            browser: backgroundBrowser,
-            page: await backgroundBrowser.newPage(),
-          };
-          await updateFamilyMembersStep(bgCtx, data);
+          await updateFamilyMembersStep(
+            (await createBackgroundPage(ctx)) as Context,
+            data,
+          );
         },
       },
       {
         title: 'updateAbsenceQuotaStep',
         handler: async (ctx) => {
-          const bgCtx = {
-            ...ctx,
-            browser: backgroundBrowser,
-            page: await backgroundBrowser.newPage(),
-          };
-          await updateAbsenceQuotaStep(bgCtx, data);
+          await updateAbsenceQuotaStep(
+            (await createBackgroundPage(ctx)) as Context,
+            data,
+          );
         },
       },
     ],
