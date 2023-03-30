@@ -1588,6 +1588,18 @@
     objectid "^1.1.0"
     typescript-fsa "^3.0.0"
 
+"@matterway/background-react@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.matterway.io/@matterway%2fbackground-react/-/background-react-5.0.0.tgz#a6298b04b4b33bf23486b7d5b5b330c3d7f250b4"
+  integrity sha512-aAxSFgxZm51SqfAysMbZITFMWJH6e/yb5Pml1xVGoDcKbL6TGnN4gzFqLNCTfxuLSfVm50txyQEZ92W6bes8cA==
+  dependencies:
+    "@matterway/js-core-with-cleanup" "^2.0.0"
+    "@types/chrome" "^0.0.119"
+    "@types/react" "^16.9.43"
+    error-stack-parser "^2.0.6"
+    objectid "^1.1.0"
+    typescript-fsa "^3.0.0"
+
 "@matterway/background-react@^5.19.4":
   version "5.19.4"
   resolved "https://registry.matterway.io/@matterway%2fbackground-react/-/background-react-5.19.4.tgz#0c18f83436bc472ab493e3e5b06469c32420452f"
@@ -1646,10 +1658,10 @@
     "@matterway/utils-node" "^0.12.4"
     adm-zip "^0.5.9"
 
-"@matterway/eslint-plugin@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.matterway.io/@matterway%2feslint-plugin/-/eslint-plugin-1.0.0.tgz#38fdecd37aa97a9903e9def5c2fede612b335487"
-  integrity sha512-tiBttP0ga6vs7dTfJSuGivW5LDGJwTRyPRH1+XlQ6e6sBZHW5tJ1OVBpgnnrzkXAE2KPSvIIMlkstrRJhKb4vg==
+"@matterway/eslint-plugin@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.matterway.io/@matterway%2feslint-plugin/-/eslint-plugin-1.3.0.tgz#3e212cc385d97c30765055446927f18263dfa940"
+  integrity sha512-OH+bXY7GIBF87Mf0BFK3dReZfp3tWp2prP5Xy10/0nfVK14rRJmXeTEY6vcckl4WSoWKOlOX71bjj3jzp+Z0Hw==
   dependencies:
     "@actions/core" "^1.9.1"
     "@actions/github" "^5.0.3"
@@ -1727,145 +1739,157 @@
   resolved "https://registry.matterway.io/@matterway%2freact-hook-form/-/react-hook-form-7.28.0-fix-global-element-check.0.tgz#3d8edee08a375b5e1b007662b89c1b6c6dea92b0"
   integrity sha512-O0fYeQYBwU+gfiPI7pvcM2psaMXUgHECZN6AfdWPrOIojWcXTDQzKCHDblXKFuJfbeZITMSaFSYPnGg6copgcg==
 
-"@matterway/sdk-assistant-api-utils@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.matterway.io/@matterway%2fsdk-assistant-api-utils/-/sdk-assistant-api-utils-0.1.3.tgz#961d648e25d7a09ea0c6045219837a94624e0386"
-  integrity sha512-ooJO4NmNyEmMKctkxFz+Pf/W5NPSf54eyDZTp+xaY4QA8xu82+n8c6RoqukdvPynRfBjpvYP0WpIi/WDLwPGpQ==
+"@matterway/sdk-assistant-api-utils@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.matterway.io/@matterway%2fsdk-assistant-api-utils/-/sdk-assistant-api-utils-0.8.1.tgz#13c84f41d1e449812ffc1fe4af3656a8f9601aec"
+  integrity sha512-jcPoTRovlWeLjFNBU3sjUOLAmp82rb753LYBBbsm6CGlaxm99RIHcfmM4YXIT6yV6s2VzRcPzveWu44YWltr4Q==
   dependencies:
     "@matterway/utils-skills" "^0.0.2"
 
-"@matterway/sdk-automation@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.matterway.io/@matterway%2fsdk-automation/-/sdk-automation-0.1.3.tgz#b84a7fa291476a6b8ab2c6e1ce1da2a1912650c2"
-  integrity sha512-sDiwC1pA7/dq9YW3wfZDEZL0lv8pcWN1mzMKOIEj9+wli8CDEqfKlPrdLWAeuIlyeWScwod6hwK2/TxVubJhcQ==
+"@matterway/sdk-automation@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.matterway.io/@matterway%2fsdk-automation/-/sdk-automation-0.8.1.tgz#35629ce7e7ed2cf5098f7e9083c7c8fb388c8c56"
+  integrity sha512-1nLjMPDoLNCXLPM1EoVNZ2APQwxtpQMWY3UinKIQgY+0glfG9kM9Qc2PUukPH1TOwUG+IuH4Go5GAoHb6RIhEA==
   dependencies:
-    "@matterway/sdk-context" "^0.1.3"
-    "@matterway/sdk-message" "^0.1.3"
-    "@matterway/sdk-progress" "^0.1.3"
-    "@matterway/sdk-watcher" "^0.1.3"
+    "@matterway/sdk-context" "^0.8.1"
+    "@matterway/sdk-message" "^0.8.1"
+    "@matterway/sdk-progress" "^0.8.1"
+    "@matterway/sdk-watcher" "^0.8.1"
 
-"@matterway/sdk-choice@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.matterway.io/@matterway%2fsdk-choice/-/sdk-choice-0.1.3.tgz#314dcb627c8c927bcbf634b60630ca27fff52d21"
-  integrity sha512-oOcKK2Emsv/i8jUZkix61eo/qUbqIl30T+T5DXMRiCuANd73X06qImcXFJmELYttdCayngPK8ks+3dkQeZRYAw==
+"@matterway/sdk-choice@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.matterway.io/@matterway%2fsdk-choice/-/sdk-choice-0.8.1.tgz#77ac8d64fc393990ecab75e6a33e57159d921468"
+  integrity sha512-ycen/5CayCgkRsZGzAGDjNcf8hSu9Dhzlm4C3OTKVQnp82QykY9gUqD1DwbN7mqYk/h2SMuAchuGHiaA4lxr2w==
   dependencies:
     "@matterway/assistant-design-system" "^6.0.0"
     "@matterway/background-react" "^4.0.0"
     "@matterway/react-hook-form" "7.28.0-fix-global-element-check.0"
-    "@matterway/sdk-context" "^0.1.3"
-    "@matterway/sdk-form" "^0.1.3"
-    "@matterway/sdk-message" "^0.1.3"
+    "@matterway/sdk-context" "^0.8.1"
+    "@matterway/sdk-form" "^0.8.1"
+    "@matterway/sdk-message" "^0.8.1"
     lodash "^4.17.21"
 
-"@matterway/sdk-context@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.matterway.io/@matterway%2fsdk-context/-/sdk-context-0.1.3.tgz#b1eaea8a18d7ab6cd81ba0a2be912c6355f34282"
-  integrity sha512-ocUxWlnFmTr8WMYPztvFTGwx9fZGahhg9xh5U98rVkVTFdunXm/8qTlEBnhabidG1MzEpdoraJGkiggGxa6n2g==
+"@matterway/sdk-context@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.matterway.io/@matterway%2fsdk-context/-/sdk-context-0.8.1.tgz#7af16ae4c8c4e0ee2ce61d81a9f0ac21c1ece437"
+  integrity sha512-0Sv+SfANrzIfnvJreB+3SWyM2sIjmokAJf4aY1zcquwvIg8/iQbr3/2EH3+xphZnTiQmTsVvnXw1sd2sMO3DNw==
   dependencies:
     "@matterway/background-react" "^4.0.0"
     "@matterway/types" "^0.18.2"
 
-"@matterway/sdk-form@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.matterway.io/@matterway%2fsdk-form/-/sdk-form-0.1.3.tgz#522fdda14439988a2f797b781e10622fa5eb6025"
-  integrity sha512-ra07UlCjBOx08LWEcIoJiczW1Bi+fspPt0JUGB82HZxs26U3DDd+STz+8M5BQpcoatELw1I6MPh/JyqaYM00jw==
+"@matterway/sdk-form@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.matterway.io/@matterway%2fsdk-form/-/sdk-form-0.8.1.tgz#d4419c453d9132143f5e335a4c1a4cad1e4224d7"
+  integrity sha512-VlVPBzULWUOrijYYvKKdRcfdi37FvF3CokvWVcTnDlb9nxLpq/zWnCrMZFS/T6VT2ZoTatICaNuUzfb7ATl4gA==
   dependencies:
     "@hookform/resolvers" "^2.8.8"
     "@matterway/assistant-design-system" "^6.0.0"
     "@matterway/background-react" "4.0.0"
-    "@matterway/sdk-context" "^0.1.3"
-    "@matterway/sdk-message" "^0.1.3"
+    "@matterway/sdk-context" "^0.8.1"
+    "@matterway/sdk-message" "^0.8.1"
     lodash "^4.17.21"
     react-hook-form "^7.41.3"
     yup "^0.32.11"
 
-"@matterway/sdk-highlight@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.matterway.io/@matterway%2fsdk-highlight/-/sdk-highlight-0.1.3.tgz#8da631b2c9991fec896e8d9e194105834b3a191f"
-  integrity sha512-4ZS5MCRNofLkkOkhiBYgndZImALyKuWI35ZdOdmRU68EdyeX61Dh0nBzdYuUJBAp0MBHadOSv8E3wrQjdjP4jw==
+"@matterway/sdk-highlight@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.matterway.io/@matterway%2fsdk-highlight/-/sdk-highlight-0.8.1.tgz#a95580e92a543631cc67ac5f09bcec7f15ed75f2"
+  integrity sha512-MV2JD8qCHqGudODS6qPkQqfImzIDXEU+TSHdrs0DGhHUO1xbpCOW0vIAMCQE68+DXs/HgNyujGm6A911sg2A3Q==
   dependencies:
-    "@matterway/sdk-context" "^0.1.3"
-    "@matterway/sdk-watcher" "^0.1.3"
+    "@matterway/sdk-context" "^0.8.1"
+    "@matterway/sdk-watcher" "^0.8.1"
     colord "^2.9.2"
     lodash "^4.17.21"
 
-"@matterway/sdk-jobs@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.matterway.io/@matterway%2fsdk-jobs/-/sdk-jobs-0.1.3.tgz#8f8106c8e3a4d8144b3c1e51a3d05bf9e3e223ce"
-  integrity sha512-LOTUuR2kB7YPh1PBu+m4mGoLipOYcBYHZVqG3gMi07HOyjOde4gGbR/X1yf1XxEdddaK3F+EPJYx9xpVecMIuQ==
+"@matterway/sdk-jobs@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.matterway.io/@matterway%2fsdk-jobs/-/sdk-jobs-0.8.1.tgz#c6e564902c8681717517da039bce4e85f53fa5dd"
+  integrity sha512-ufnsNUuvAC5aTTjCM6c5rGUskxFeCe0CiM2foj524ksn5fI6Y0jaks5tkVB2Ct8GnbCcVXCYxqZ1fYL/emcBmg==
   dependencies:
     "@matterway/agent-puppeteer-client" "^4.1.1"
     "@matterway/background-hooks" "^8.36.0"
     "@matterway/background-react" "^4.0.0"
     "@matterway/js-core-with-cleanup" "^2.0.0"
-    "@matterway/sdk-context" "^0.1.3"
+    "@matterway/sdk-context" "^0.8.1"
     "@microsoft/api-documenter" "^7.13.78"
     "@microsoft/api-extractor" "^7.19.3"
     lodash "^4.17.21"
     p-limit "4.0.0"
 
-"@matterway/sdk-log@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.matterway.io/@matterway%2fsdk-log/-/sdk-log-0.1.3.tgz#39c4f42db1ea229f964c38bf1ff505fab3c51ad8"
-  integrity sha512-zXLm6RAoSQpPJyK6MIzAngC3SK4DtbzOuoP99SFj40egtJ7X0mORq4Zct74epen4H2JdsPVZSDolEnV3Ci4Ifg==
+"@matterway/sdk-log@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.matterway.io/@matterway%2fsdk-log/-/sdk-log-0.8.1.tgz#05b0b8bf9937afa054730393aa2e65a365ce4162"
+  integrity sha512-7IWFhRGkH1AuZZOCIMucw4dMcMETVB64EuJVwrGlN461+Ob+MZXoRmknb1wg7mwgodDm/MdFPv+Te+uwsjgp2A==
   dependencies:
-    "@matterway/sdk-context" "^0.1.3"
+    "@matterway/sdk-context" "^0.8.1"
 
-"@matterway/sdk-message@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.matterway.io/@matterway%2fsdk-message/-/sdk-message-0.1.3.tgz#4e62df9dc41293f5594c0412e6c2fb4c8a5734a9"
-  integrity sha512-jxC/lQfiFYf34QwWJCwoplDjQvggYCeIGm50vmlcRy+6QDr8LsWS8F6uS6tZYMl504amc+FOFuj6y0twWdAgMw==
+"@matterway/sdk-message@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.matterway.io/@matterway%2fsdk-message/-/sdk-message-0.8.1.tgz#21797b871212240395dc0a5e0c3a0a5a7805d196"
+  integrity sha512-S+65euV4hrRjsXb81KBc88h3Z1pMUxLk+n8GVQTDPLbrAZPRFEGspuvq/7UXkSZZgvgXm+5WHHv0UbyZO3m1Ew==
   dependencies:
     "@matterway/assistant-design-system" "^6.0.0"
     "@matterway/background-react" "^4.0.0"
-    "@matterway/sdk-context" "^0.1.3"
+    "@matterway/sdk-context" "^0.8.1"
 
-"@matterway/sdk-notice@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.matterway.io/@matterway%2fsdk-notice/-/sdk-notice-0.1.3.tgz#aaa3f117139c32bceaa8810b79355b0893327153"
-  integrity sha512-9uiAJ43y8RltLeSCqDST/kST/le+cW4kdn7jRCwzOtPB7u9dVmKcCHIL+676AWpTXHQOr0Xq83Fj6ND2hPqY4w==
+"@matterway/sdk-notice@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.matterway.io/@matterway%2fsdk-notice/-/sdk-notice-0.8.1.tgz#6c9ee3033940b8e63390e195f5f45181a593e6e4"
+  integrity sha512-Fwcc1oB+8MVVhDQESHOPqu3HMWAHQ41SpeNgrlUaXxO00PWDXfmoP9Iw5IDsvTuxpLS2EytenhwyJfcjBXbljg==
   dependencies:
     "@matterway/assistant-design-system" "^6.0.0"
     "@matterway/background-react" "^4.0.0"
-    "@matterway/sdk-context" "^0.1.3"
+    "@matterway/sdk-context" "^0.8.1"
 
-"@matterway/sdk-progress@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.matterway.io/@matterway%2fsdk-progress/-/sdk-progress-0.1.3.tgz#6f158e8786942aa4beca7879dedc4a681fde918f"
-  integrity sha512-L6QtA6XyqUMeouHaRKWfZ4U1sXCwKgrz8wRsZKvgB+ktHI1tQogF2AAs8AXBY9CFNv/7EEN+NyP/3/rHYefvsA==
+"@matterway/sdk-pdf@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.matterway.io/@matterway%2fsdk-pdf/-/sdk-pdf-0.8.1.tgz#42e6ef212fa8970a4c2e5a9d16e54656d7fc9873"
+  integrity sha512-EnqnK4l0J/ZcbaO2lj3+AyZDNNzg9dsQFAvybI+cF6hpBrObUSp20vZ4BAxRwswqhKiYpVgI8y9eUUMyoC20iA==
+  dependencies:
+    "@matterway/assistant-design-system" "^6.0.0"
+    "@matterway/background-react" "^5.0.0"
+    "@matterway/sdk-context" "^0.8.1"
+    "@matterway/sdk-form" "^0.8.1"
+    pdf-lib "^1.17.1"
+
+"@matterway/sdk-progress@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.matterway.io/@matterway%2fsdk-progress/-/sdk-progress-0.8.1.tgz#97d7e6ebaa02db45a53f4f5cae97319abafa1e3b"
+  integrity sha512-KRs9+Lq0AR67pgtd2la2lcOijwThQOm6eqF9v6CXPLsIshRBDQkbLiC/euGsBds63R6NS7wumE17zAlGPx6j/w==
   dependencies:
     "@matterway/assistant-design-system" "^6.0.0"
     "@matterway/background-react" "^4.0.0"
-    "@matterway/sdk-context" "^0.1.3"
-    "@matterway/sdk-jobs" "^0.1.3"
+    "@matterway/sdk-context" "^0.8.1"
+    "@matterway/sdk-jobs" "^0.8.1"
     lodash "^4.17.21"
     styled-components "^5.3.1"
 
-"@matterway/sdk-watcher@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.matterway.io/@matterway%2fsdk-watcher/-/sdk-watcher-0.1.3.tgz#0035980e8af29ee96209ddba552236efd993d833"
-  integrity sha512-FSujoZpdX54YhWnSj++N3gq5kxnHnmZ6fMwd/gbMiUkiKDh85jrX0Z8M10V816CBnE+PyuXszPtzoPWVzagamg==
+"@matterway/sdk-watcher@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.matterway.io/@matterway%2fsdk-watcher/-/sdk-watcher-0.8.1.tgz#9e4050adafbba12b5b883c1f403a5f80c365d8a6"
+  integrity sha512-9egCkUnT761uFtczHkwOaqErtFJJXCcUEgMsRAZLj2yharqzWRMPnNlPeHWPlq4Fkr2PrgT/g3TnTlJvQuj6aw==
   dependencies:
-    "@matterway/sdk-context" "^0.1.3"
+    "@matterway/sdk-context" "^0.8.1"
     lodash "^4.17.21"
 
-"@matterway/sdk@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.matterway.io/@matterway%2fsdk/-/sdk-0.1.3.tgz#c3f777db6a9a47dcea340a2543d677846993f4b6"
-  integrity sha512-ELYGIByL3bzJaSUB8jSKqxLTPdplyp0oDCuZYdflmB9vUddvovU4gOKJscPBErse7YUstOyx6F4teVzx3supeg==
+"@matterway/sdk@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.matterway.io/@matterway%2fsdk/-/sdk-0.8.1.tgz#9cda069b02d1731059339aa17d797e7b3686908a"
+  integrity sha512-uY0MdEIAS4kZebKazVsgqVn0+q9GuMEO0yd3AxLOb8oS/10MlHoWvluI9qVDaT5Jp6rSKNkISgClySh5pwycpA==
   dependencies:
-    "@matterway/sdk-assistant-api-utils" "^0.1.3"
-    "@matterway/sdk-automation" "^0.1.3"
-    "@matterway/sdk-choice" "^0.1.3"
-    "@matterway/sdk-context" "^0.1.3"
-    "@matterway/sdk-form" "^0.1.3"
-    "@matterway/sdk-highlight" "^0.1.3"
-    "@matterway/sdk-jobs" "^0.1.3"
-    "@matterway/sdk-log" "^0.1.3"
-    "@matterway/sdk-message" "^0.1.3"
-    "@matterway/sdk-notice" "^0.1.3"
-    "@matterway/sdk-progress" "^0.1.3"
-    "@matterway/sdk-watcher" "^0.1.3"
+    "@matterway/sdk-assistant-api-utils" "^0.8.1"
+    "@matterway/sdk-automation" "^0.8.1"
+    "@matterway/sdk-choice" "^0.8.1"
+    "@matterway/sdk-context" "^0.8.1"
+    "@matterway/sdk-form" "^0.8.1"
+    "@matterway/sdk-highlight" "^0.8.1"
+    "@matterway/sdk-jobs" "^0.8.1"
+    "@matterway/sdk-log" "^0.8.1"
+    "@matterway/sdk-message" "^0.8.1"
+    "@matterway/sdk-notice" "^0.8.1"
+    "@matterway/sdk-pdf" "^0.8.1"
+    "@matterway/sdk-progress" "^0.8.1"
+    "@matterway/sdk-watcher" "^0.8.1"
 
 "@matterway/skill-cli@^8.42.0":
   version "8.42.0"
@@ -2197,6 +2221,20 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@panva/asn1.js/-/asn1.js-1.0.0.tgz#dd55ae7b8129e02049f009408b97c61ccf9032f6"
   integrity sha512-UdkG3mLEqXgnlKsWanWcgb6dOjUzJ+XC5f+aWw30qrtjxeNUSfKX1cd5FBzOaXQumoe9nIqeZUvrRJS03HCCtw==
+
+"@pdf-lib/standard-fonts@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@pdf-lib/standard-fonts/-/standard-fonts-1.0.0.tgz#8ba691c4421f71662ed07c9a0294b44528af2d7f"
+  integrity sha512-hU30BK9IUN/su0Mn9VdlVKsWBS6GyhVfqjwl1FjZN4TxP6cCw0jP2w7V3Hf5uX7M0AZJ16vey9yE0ny7Sa59ZA==
+  dependencies:
+    pako "^1.0.6"
+
+"@pdf-lib/upng@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@pdf-lib/upng/-/upng-1.0.1.tgz#7dc9c636271aca007a9df4deaf2dd7e7960280cb"
+  integrity sha512-dQK2FUMQtowVP00mtIksrlZhdFXQZPC+taih1q4CvPZ5vqdxR/LKBaFg0oAfzd1GlHZXXSPdQfzQnt+ViGvEIQ==
+  dependencies:
+    pako "^1.0.10"
 
 "@polka/url@^1.0.0-next.20":
   version "1.0.0-next.21"
@@ -9714,6 +9752,11 @@ p-try@^2.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
 
+pako@^1.0.10, pako@^1.0.11, pako@^1.0.6:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.11.tgz#6c9599d340d54dfd3946380252a35705a6b992bf"
+  integrity sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==
+
 param-case@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/param-case/-/param-case-3.0.4.tgz#7d17fe4aa12bde34d4a77d91acfb6219caad01c5"
@@ -9828,6 +9871,16 @@ pathval@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/pathval/-/pathval-1.1.1.tgz#8534e77a77ce7ac5a2512ea21e0fdb8fcf6c3d8d"
   integrity sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==
+
+pdf-lib@^1.17.1:
+  version "1.17.1"
+  resolved "https://registry.yarnpkg.com/pdf-lib/-/pdf-lib-1.17.1.tgz#9e7dd21261a0c1fb17992580885b39e7d08f451f"
+  integrity sha512-V/mpyJAoTsN4cnP31vc0wfNA1+p20evqqnap0KLoRUN0Yk/p3wN52DOEsL4oBFcLdb76hlpKPtzJIgo67j/XLw==
+  dependencies:
+    "@pdf-lib/standard-fonts" "^1.0.0"
+    "@pdf-lib/upng" "^1.0.1"
+    pako "^1.0.11"
+    tslib "^1.11.1"
 
 pend@~1.2.0:
   version "1.2.0"
@@ -11916,7 +11969,7 @@ tsconfig-paths@^3.14.1, tsconfig-paths@^3.9.0:
     minimist "^1.2.6"
     strip-bom "^3.0.0"
 
-tslib@^1.10.0, tslib@^1.13.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
+tslib@^1.10.0, tslib@^1.11.1, tslib@^1.13.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==

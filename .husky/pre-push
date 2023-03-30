@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+errorMessage=$(yarn add @matterway/eslint-plugin 2>&1) && yarn lint
