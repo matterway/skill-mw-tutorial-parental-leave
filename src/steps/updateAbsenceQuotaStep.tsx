@@ -2,6 +2,7 @@ import {EmployeeData} from './extractRequestDataStep';
 import {LeaveData} from './enterLeaveDataStep';
 import {Context, fill, click} from '@matterway/sdk';
 import {dispatchEnter} from 'shared/utils';
+import {Page} from 'puppeteer-core';
 
 export async function updateAbsenceQuotaStep(
   ctx: Context,
@@ -11,10 +12,9 @@ export async function updateAbsenceQuotaStep(
   },
 ) {
   console.log('step: updateAbsenceQuotaStep');
-  const {page} = ctx;
 
   // Navigate
-  await page.goto('https://employee-master-data.demo.matterway.io');
+  await ctx.page.goto('https://employee-master-data.demo.matterway.io');
   await fill(ctx, '#employee-id', `${data.employee.id}`);
   await dispatchEnter(ctx, '#employee-id');
 
@@ -29,5 +29,5 @@ export async function updateAbsenceQuotaStep(
   // Save and submit
   await click(ctx, 'form button');
 
-  await page.close();
+  await (ctx.page as unknown as Page).close();
 }

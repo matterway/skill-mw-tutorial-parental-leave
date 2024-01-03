@@ -1,7 +1,11 @@
 import {updateFamilyMembersStep} from './updateFamilyMembersStep';
 import {updateAbsenceQuotaStep} from './updateAbsenceQuotaStep';
-import {Context, showProgress, runJobsWithProgressList} from '@matterway/sdk';
-import {connectToMinimisedWindow} from '@matterway/connection-manager';
+import {
+  Context,
+  showProgress,
+  runJobsWithProgressList,
+  createBackgroundPage,
+} from '@matterway/sdk';
 import {EmployeeData} from './extractRequestDataStep';
 import {LeaveData} from './enterLeaveDataStep';
 import {ChildData} from './enterChildDataStep';
@@ -18,32 +22,20 @@ export async function updateMasterDataStep(
   // This might take a while. let's show progress, for good measure
   await showProgress(ctx, 'Starting background tasks...');
 
-  // Create new background connection
-  const browser = ctx.browser;
-  const backgroundBrowser = await connectToMinimisedWindow(browser);
-
-  const errors = await runJobsWithProgressList(
+  const jobs = await runJobsWithProgressList(
     ctx,
     [
       {
         title: 'updateFamilyMembersStep',
-        handler: async (ctx) => {
-          const bgCtx = {
-            ...ctx,
-            browser: backgroundBrowser,
-            page: await backgroundBrowser.newPage(),
-          };
+        handler: async (_ctx) => {
+          const bgCtx = await createBackgroundPage(_ctx);
           await updateFamilyMembersStep(bgCtx, data);
         },
       },
       {
         title: 'updateAbsenceQuotaStep',
-        handler: async (ctx) => {
-          const bgCtx = {
-            ...ctx,
-            browser: backgroundBrowser,
-            page: await backgroundBrowser.newPage(),
-          };
+        handler: async (_ctx) => {
+          const bgCtx = await createBackgroundPage(_ctx);
           await updateAbsenceQuotaStep(bgCtx, data);
         },
       },
@@ -53,7 +45,9 @@ export async function updateMasterDataStep(
     },
   );
 
-  errors.forEach((err) => {
+  jobs.forEach((job) => {
+    // @ts-ignore
+    const err = job.result;
     if (typeof err !== 'undefined') {
       throw err;
     }

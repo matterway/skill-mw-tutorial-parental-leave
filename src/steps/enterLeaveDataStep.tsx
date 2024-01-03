@@ -15,7 +15,7 @@ export async function enterLeaveDataStep(
 ) {
   console.log('step: enterLeaveDataStep', data);
 
-  showProgress(ctx, 'Open the leave request...');
+  await showProgress(ctx, 'Open the leave request...');
   await click(ctx, '.open-attachment:nth-child(1)');
 
   const formResult = await showForm(ctx, {
@@ -25,49 +25,39 @@ export async function enterLeaveDataStep(
         fields: [
           {
             type: 'date',
-            id: 'startDate',
+            name: 'startDate',
             props: {
               label: 'Start of leave',
             },
-            validation: {
-              type: 'date',
-              rules: [{type: 'required', params: ['Required']}],
-            },
+            validation: [{type: 'required', message: 'This field is required'}],
           },
           {
             type: 'date',
-            id: 'endDate',
+            name: 'endDate',
             props: {
               label: 'End of leave',
             },
-            validation: {
-              type: 'date',
-              rules: [{type: 'required', params: ['Required']}],
-            },
+            validation: [{type: 'required', message: 'This field is required'}],
           },
         ],
       },
     ],
     initialData: {
-      userYearInput: new Date(),
+      userYearInput: new Date().toISOString().split('T')[0],
     },
-    navigation: {
-      buttons: [
-        {
-          id: 'proceedButton',
-          text: 'Submit',
-          onlyIfValid: true,
-        },
-      ],
-    },
-    header: {
-      title: 'LEAVES',
-      description: 'Enter the terms for the leave of absence',
-    },
+
+    buttons: [
+      {
+        value: 'proceedButton',
+        text: 'Submit',
+      },
+    ],
+    title: 'LEAVES',
+    description: 'Enter the terms for the leave of absence',
   });
   const leave = formResult.data as LeaveData;
 
-  showProgress(ctx, 'Close the leave request...');
+  await showProgress(ctx, 'Close the leave request...');
   await click(ctx, '#image-viewer-overlay');
 
   // Jump to your next step here

@@ -2,6 +2,7 @@ import {EmployeeData} from './extractRequestDataStep';
 import {ChildData} from './enterChildDataStep';
 import {Context, fill, click, setProperty} from '@matterway/sdk';
 import {dispatchEnter} from 'shared/utils';
+import {Page} from 'puppeteer-core';
 
 export async function updateFamilyMembersStep(
   ctx: Context,
@@ -33,5 +34,5 @@ export async function updateFamilyMembersStep(
   // Save and submit
   await click(ctx, 'form button');
 
-  await page.close();
+  await (ctx.page as unknown as Page).close();
 }
