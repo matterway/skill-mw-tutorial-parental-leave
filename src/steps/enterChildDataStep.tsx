@@ -18,7 +18,7 @@ export async function enterChildDataStep(
 ) {
   console.log('enterchildData step', data);
 
-  showProgress(ctx, 'Open the birth certificate...');
+  await showProgress(ctx, 'Open the birth certificate...');
 
   await click(ctx, '.open-attachment:nth-child(2)');
 
@@ -29,61 +29,47 @@ export async function enterChildDataStep(
         fields: [
           {
             type: 'text',
-            id: 'firstName',
+            name: 'firstName',
             props: {
               label: 'First name',
             },
-            validation: {
-              type: 'string',
-              rules: [{type: 'required', params: ['Required']}],
-            },
+            validation: [{type: 'required', message: 'This field is required'}],
           },
           {
             type: 'text',
-            id: 'lastName',
+            name: 'lastName',
             props: {
               label: 'Last name',
             },
-            validation: {
-              type: 'string',
-              rules: [{type: 'required', params: ['Required']}],
-            },
+            validation: [{type: 'required', message: 'This field is required'}],
           },
           {
             type: 'date',
-            id: 'birthDate',
+            name: 'birthDate',
             props: {
               label: 'Date of birth',
             },
-            validation: {
-              type: 'date',
-              rules: [{type: 'required', params: ['Required']}],
-            },
+            validation: [{type: 'required', message: 'This field is required'}],
           },
         ],
       },
     ],
     initialData: {
-      userYearInput: new Date(),
+      userYearInput: new Date().toISOString().split('T')[0],
     },
-    navigation: {
-      buttons: [
-        {
-          id: 'proceedButton',
-          text: 'Submit',
-          onlyIfValid: true,
-        },
-      ],
-    },
-    header: {
-      title: 'BIRTH CERTIFICATE',
-      description: 'Enter the information about the child',
-    },
+    buttons: [
+      {
+        value: 'proceedButton',
+        text: 'Submit',
+      },
+    ],
+    title: 'BIRTH CERTIFICATE',
+    description: 'Enter the information about the child',
   });
 
   const child = formResult.data as ChildData;
 
-  showProgress(ctx, 'Close the birth certificate...');
+  await showProgress(ctx, 'Close the birth certificate...');
   await click(ctx, '#image-viewer-overlay');
 
   // Jump to your next step here
