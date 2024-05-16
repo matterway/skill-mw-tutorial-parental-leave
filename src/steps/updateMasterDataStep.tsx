@@ -1,15 +1,13 @@
-import {updateFamilyMembersStep} from './updateFamilyMembersStep';
-import {updateAbsenceQuotaStep} from './updateAbsenceQuotaStep';
+import {EmployeeData, LeaveData, ChildData} from 'shared/types';
 import {
   Context,
   showProgress,
-  runJobsWithProgressList,
   createBackgroundPage,
+  runJobsWithProgressList,
 } from '@matterway/sdk';
-import {EmployeeData} from './extractRequestDataStep';
-import {LeaveData} from './enterLeaveDataStep';
-import {ChildData} from './enterChildDataStep';
-import {successStep} from './@success';
+import {URL_EMPLOYEE_MASTER_DATA} from 'shared/constants';
+import {updateFamilyMembersStep} from './updateFamilyMembersStep';
+import {updateAbsenceQuotaStep} from './updateAbsenceQuotaStep';
 
 export async function updateMasterDataStep(
   ctx: Context,
@@ -19,8 +17,7 @@ export async function updateMasterDataStep(
     child: ChildData;
   },
 ) {
-  // This might take a while. let's show progress, for good measure
-  await showProgress(ctx, 'Starting background tasks...');
+  console.log('step: updateMasterDataStep', data);
 
   const jobs = await runJobsWithProgressList(
     ctx,
@@ -28,15 +25,21 @@ export async function updateMasterDataStep(
       {
         title: 'updateFamilyMembersStep',
         handler: async (_ctx) => {
-          const bgCtx = await createBackgroundPage(_ctx);
-          await updateFamilyMembersStep(bgCtx, data);
+          const backgroundCtx = await createBackgroundPage(
+            _ctx,
+            URL_EMPLOYEE_MASTER_DATA,
+          );
+          await updateFamilyMembersStep(backgroundCtx, data);
         },
       },
       {
         title: 'updateAbsenceQuotaStep',
         handler: async (_ctx) => {
-          const bgCtx = await createBackgroundPage(_ctx);
-          await updateAbsenceQuotaStep(bgCtx, data);
+          const backgroundCtx = await createBackgroundPage(
+            _ctx,
+            URL_EMPLOYEE_MASTER_DATA,
+          );
+          await updateAbsenceQuotaStep(backgroundCtx, data);
         },
       },
     ],
@@ -52,6 +55,4 @@ export async function updateMasterDataStep(
       throw err;
     }
   });
-
-  await successStep(ctx);
 }

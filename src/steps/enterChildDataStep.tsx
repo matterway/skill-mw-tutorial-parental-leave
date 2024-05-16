@@ -1,22 +1,8 @@
 import {click, showForm, showProgress, Context} from '@matterway/sdk';
-import {LeaveData} from './enterLeaveDataStep';
-import {EmployeeData} from './extractRequestDataStep';
-import {updateMasterDataStep} from './updateMasterDataStep';
+import {ChildData} from 'shared/types';
 
-export interface ChildData {
-  firstName: string;
-  lastName: string;
-  birthDate: string;
-}
-
-export async function enterChildDataStep(
-  ctx: Context,
-  data: {
-    employee: EmployeeData;
-    leave: LeaveData;
-  },
-) {
-  console.log('enterchildData step', data);
+export async function enterChildDataStep(ctx: Context) {
+  console.log('enterchildData step');
 
   await showProgress(ctx, 'Open the birth certificate...');
 
@@ -67,11 +53,11 @@ export async function enterChildDataStep(
     description: 'Enter the information about the child',
   });
 
-  const child = formResult.data as ChildData;
+  const result = formResult.data as ChildData;
 
   await showProgress(ctx, 'Close the birth certificate...');
   await click(ctx, '#image-viewer-overlay');
 
-  // Jump to your next step here
-  return await updateMasterDataStep(ctx, {...data, child});
+  console.log('step: enterChildDataStep end', result);
+  return result;
 }
