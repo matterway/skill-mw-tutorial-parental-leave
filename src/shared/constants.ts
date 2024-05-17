@@ -1,6 +1,2 @@
-// Keep shared constants here
-
-/**
- * @example
- * export const MY_SITE_URL = 'https://example.org';
- */
+export const URL_EMPLOYEE_MASTER_DATA =
+  'https://employee-master-data.demo.matterway.io';

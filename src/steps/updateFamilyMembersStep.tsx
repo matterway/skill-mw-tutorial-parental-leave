@@ -1,7 +1,5 @@
-import {EmployeeData} from './extractRequestDataStep';
-import {ChildData} from './enterChildDataStep';
-import {Context, fill, click, setProperty} from '@matterway/sdk';
-import {dispatchEnter} from 'shared/utils';
+import {EmployeeData, ChildData} from 'shared/types';
+import {Context, fill, click, setProperty, pressEnterKey} from '@matterway/sdk';
 import {Page} from 'puppeteer-core';
 
 export async function updateFamilyMembersStep(
@@ -12,16 +10,13 @@ export async function updateFamilyMembersStep(
   },
 ) {
   console.log('step: updateFamilyMembersStep', data);
-  const {page} = ctx;
 
-  // Navigate
-  await page.goto('https://employee-master-data.demo.matterway.io');
   await fill(ctx, '#employee-id', `${data.employee.id}`);
-  await dispatchEnter(ctx, '#employee-id');
+  await pressEnterKey(ctx, {selector: '#employee-id'});
 
   // Open transaction
   await fill(ctx, '#transaction-id', '0021');
-  await dispatchEnter(ctx, '#transaction-id');
+  await pressEnterKey(ctx, {selector: '#transaction-id'});
 
   // Fill form
   await setProperty(ctx, '[name="memberType"]', 'value', '2');
@@ -34,5 +29,7 @@ export async function updateFamilyMembersStep(
   // Save and submit
   await click(ctx, 'form button');
 
-  await (ctx.page as unknown as Page).close();
+  // Let's close the page after we used it
+  // It will happen anyway when the skill is terminated
+  await (ctx.page as Page).close();
 }

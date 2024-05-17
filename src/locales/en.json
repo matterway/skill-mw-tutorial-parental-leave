@@ -3,6 +3,9 @@
     "text": "Assistant will help you record this Parental Leave, and update the family members and leave quota in the master data system.",
     "proceedButton": "Let's go!"
   },
+  "extractRequestData": {
+    "progress": "Extracting data from request..."
+  },
   "success": {
     "subtitle": "Task processed successfully",
     "text": "The request has been processed successfully. You can now dismiss Assistant and work on a new task.",

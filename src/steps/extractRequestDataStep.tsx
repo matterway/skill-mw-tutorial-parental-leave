@@ -1,26 +1,22 @@
-import {Context, getValue, showProgress, waitForSelector} from '@matterway/sdk';
-import {enterLeaveDataStep} from './enterLeaveDataStep';
-export interface EmployeeData {
-  id: string;
-  fullName: string;
-}
+import {Context, showProgress, waitForSelector, getValue} from '@matterway/sdk';
+import {t} from 'i18next';
+import {EmployeeData} from 'shared/types';
 
 export async function extractRequestDataStep(ctx: Context) {
   console.log('step: extractRequestDataStep');
 
-  showProgress(ctx, 'Extracting data from request...');
+  // eslint-disable-next-line
+  showProgress(ctx, t('extractRequestData.progress'));
   await waitForSelector(ctx, '[name="incident.employeeId"]');
-  const employeeId = await getValue(ctx, '[name="incident.employeeId"]');
-  const employeeFullName = await getValue(
-    ctx,
-    '[name="incident.employeeFullName"]',
-  );
+  const id = (await getValue(ctx, '[name="incident.employeeId"]')) || '';
+  const fullName =
+    (await getValue(ctx, '[name="incident.employeeFullName"]')) || '';
 
-  const employee: EmployeeData = {
-    id: employeeId as string,
-    fullName: employeeFullName as string,
+  const result: EmployeeData = {
+    id,
+    fullName,
   };
 
-  // Jump to your next step here
-  return await enterLeaveDataStep(ctx, {employee});
+  console.log('step: extractRequestDataStep end', result);
+  return result;
 }

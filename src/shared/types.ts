@@ -1,7 +1,15 @@
-export type Resolver<T> = (value: T) => void;
+export interface EmployeeData {
+  id: string;
+  fullName: string;
+}
 
-// Export types used across your skills here
-export interface SkillData {
-  // Example data
-  id: number;
+export interface LeaveData {
+  startDate: string;
+  endDate: string;
+}
+
+export interface ChildData {
+  firstName: string;
+  lastName: string;
+  birthDate: string;
 }
