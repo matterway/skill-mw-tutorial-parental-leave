@@ -49,5 +49,11 @@
     "*": [
       "prettier --write --ignore-unknown"
     ]
+  },
+  "resolutions": {
+    "micromatch": "^4.0.8 ",
+    "path-to-regexp": "^0.1.10",
+    "braces": "^3.0.3",
+    "body-parser": "^1.20.3"
   }
 }
