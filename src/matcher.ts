@@ -1,4 +1,6 @@
-export default function matcher(window: Window) {
+import {MatcherResult} from '@matterway/types';
+
+export default function matcher(window: Window): MatcherResult {
   const URL = 'https://hr-service-desk.demo.matterway.io/ticket';
   const isServiceDeskTicket = window.location.href.includes(URL);
 
