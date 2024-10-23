@@ -1,7 +1,6 @@
 import {EmployeeData, LeaveData, ChildData} from 'shared/types';
 import {
   Context,
-  showProgress,
   createBackgroundPage,
   runJobsWithProgressList,
 } from '@matterway/sdk';

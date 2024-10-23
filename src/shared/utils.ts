@@ -1,7 +1,7 @@
 import {Context} from '@matterway/sdk';
 
 export async function dispatchEnter(ctx: Context, selector: string) {
-  return await ctx.page.evaluate((selector) => {
+  return await ctx.page.evaluate((_selector) => {
     const keyboardEvent = new KeyboardEvent('keydown', {
       code: 'Enter',
       key: 'Enter',
@@ -10,6 +10,6 @@ export async function dispatchEnter(ctx: Context, selector: string) {
       view: window,
       bubbles: true,
     });
-    document.querySelector(selector)?.dispatchEvent(keyboardEvent);
+    document.querySelector(_selector)?.dispatchEvent(keyboardEvent);
   }, selector);
 }

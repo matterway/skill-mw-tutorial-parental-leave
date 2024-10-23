@@ -4,7 +4,7 @@ import {LeaveData} from 'shared/types';
 export async function enterLeaveDataStep(ctx: Context) {
   console.log('step: enterLeaveDataStep');
 
-  showProgress(ctx, 'Open the leave request...');
+  await showProgress(ctx, 'Open the leave request...');
   await click(ctx, '.open-attachment:nth-child(1)');
 
   const formResult = await showForm(ctx, {
@@ -47,7 +47,7 @@ export async function enterLeaveDataStep(ctx: Context) {
 
   const result = formResult.data as LeaveData;
 
-  showProgress(ctx, 'Close the leave request...');
+  await showProgress(ctx, 'Close the leave request...');
   await click(ctx, '#image-viewer-overlay');
 
   console.log('step: enterLeaveDataStep end', result);
