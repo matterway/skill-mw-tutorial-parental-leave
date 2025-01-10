@@ -1,5 +1,9 @@
 import {EmployeeData, LeaveData, ChildData} from 'shared/types';
-import {Context, createBackgroundPage, runJobs} from '@matterway/sdk';
+import {
+  Context,
+  createBackgroundPage,
+  runJobsWithProgressList,
+} from '@matterway/sdk';
 import {URL_EMPLOYEE_MASTER_DATA} from 'shared/constants';
 import {updateFamilyMembersStep} from './updateFamilyMembersStep';
 import {updateAbsenceQuotaStep} from './updateAbsenceQuotaStep';
@@ -14,28 +18,32 @@ export async function updateMasterDataStep(
 ) {
   console.log('step: updateMasterDataStep', data);
 
-  const jobs = await runJobs(ctx, [
-    {
-      title: 'updateFamilyMembersStep',
-      handler: async () => {
-        const backgroundCtx = await createBackgroundPage(
-          ctx,
-          URL_EMPLOYEE_MASTER_DATA,
-        );
-        await updateFamilyMembersStep(backgroundCtx, data);
+  const jobs = await runJobsWithProgressList(
+    ctx,
+    [
+      {
+        title: 'updateFamilyMembersStep',
+        handler: async () => {
+          const backgroundCtx = await createBackgroundPage(
+            ctx,
+            URL_EMPLOYEE_MASTER_DATA,
+          );
+          await updateFamilyMembersStep(backgroundCtx, data);
+        },
       },
-    },
-    {
-      title: 'updateAbsenceQuotaStep',
-      handler: async () => {
-        const backgroundCtx = await createBackgroundPage(
-          ctx,
-          URL_EMPLOYEE_MASTER_DATA,
-        );
-        await updateAbsenceQuotaStep(backgroundCtx, data);
+      {
+        title: 'updateAbsenceQuotaStep',
+        handler: async () => {
+          const backgroundCtx = await createBackgroundPage(
+            ctx,
+            URL_EMPLOYEE_MASTER_DATA,
+          );
+          await updateAbsenceQuotaStep(backgroundCtx, data);
+        },
       },
-    },
-  ]);
+    ],
+    {concurrency: 2},
+  );
 
   jobs.forEach((job) => {
     // @ts-ignore
