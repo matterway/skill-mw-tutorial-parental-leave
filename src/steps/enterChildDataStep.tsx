@@ -2,7 +2,7 @@ import {click, showForm, showProgress, Context} from '@matterway/sdk';
 import {ChildData} from 'shared/types';
 
 export async function enterChildDataStep(ctx: Context) {
-  console.log('enterchildData step');
+  console.log('enterChildData step');
 
   await showProgress(ctx, 'Open the birth certificate...');
 
