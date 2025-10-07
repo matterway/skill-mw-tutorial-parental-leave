@@ -1,53 +1,48 @@
-import {Context, showProgress, click, showForm} from '@matterway/sdk';
+import {Context, click} from '@matterway/sdk';
+import {
+  bubble,
+  dateField,
+  headerBar,
+  group,
+  navigationBar,
+  showUI,
+} from '@matterway/sdk/lib/UIv2';
 import {LeaveData} from 'shared/types';
 
 export async function enterLeaveDataStep(ctx: Context) {
   console.log('step: enterLeaveDataStep');
 
-  await showProgress(ctx, 'Open the leave request...');
+  void showUI.progress(ctx, 'Open the leave request...', {overlay: true});
   await click(ctx, '.open-attachment:nth-child(1)');
 
-  const formResult = await showForm(ctx, {
-    fields: [
-      {
-        type: 'group',
-        fields: [
-          {
-            type: 'date',
-            name: 'startDate',
-            props: {
-              label: 'Start of leave',
-            },
-            validation: [{type: 'required', message: 'This field is required'}],
-          },
-          {
-            type: 'date',
-            name: 'endDate',
-            props: {
-              label: 'End of leave',
-            },
-            validation: [{type: 'required', message: 'This field is required'}],
-          },
-        ],
-      },
-    ],
-    initialData: {
-      userYearInput: new Date().toISOString().split('T')[0],
-    },
+  const form: any = await showUI(
+    ctx,
+    bubble([
+      headerBar({
+        title: 'LEAVE REQUEST',
+        description: 'Enter the terms for the leave of absence',
+      }),
+      group([
+        dateField({
+          name: 'startDate',
+          label: 'Start of leave',
+          required: true,
+          validationMessage: 'This field is required',
+        }),
+        dateField({
+          name: 'endDate',
+          label: 'End of leave',
+          required: true,
+          validationMessage: 'This field is required',
+        }),
+      ]),
+      navigationBar({buttons: [{text: 'Submit', value: 'proceedButton'}]}),
+    ]),
+  );
 
-    buttons: [
-      {
-        value: 'proceedButton',
-        text: 'Submit',
-      },
-    ],
-    title: 'LEAVES',
-    description: 'Enter the terms for the leave of absence',
-  });
+  const result = form.state as LeaveData;
 
-  const result = formResult.data as LeaveData;
-
-  await showProgress(ctx, 'Close the leave request...');
+  void showUI.progress(ctx, 'Close the leave request...', {overlay: true});
   await click(ctx, '#image-viewer-overlay');
 
   console.log('step: enterLeaveDataStep end', result);
