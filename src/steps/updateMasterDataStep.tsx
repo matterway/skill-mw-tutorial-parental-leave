@@ -1,9 +1,6 @@
 import {EmployeeData, LeaveData, ChildData} from 'shared/types';
-import {
-  Context,
-  createBackgroundPage,
-  runJobsWithProgressList,
-} from '@matterway/sdk';
+import {Context, createBackgroundPage} from '@matterway/sdk';
+import {showUI} from '@matterway/sdk/lib/UIv2';
 import {URL_EMPLOYEE_MASTER_DATA} from 'shared/constants';
 import {updateFamilyMembersStep} from './updateFamilyMembersStep';
 import {updateAbsenceQuotaStep} from './updateAbsenceQuotaStep';
@@ -18,7 +15,7 @@ export async function updateMasterDataStep(
 ) {
   console.log('step: updateMasterDataStep', data);
 
-  const jobs = await runJobsWithProgressList(
+  const jobs = await showUI.runJobsWithProgressList(
     ctx,
     [
       {

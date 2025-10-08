@@ -1,7 +1,6 @@
 import type {Context} from '@matterway/sdk';
-import {showSuccessNotice} from '@matterway/sdk';
+import {showUI} from '@matterway/sdk/lib/UIv2';
 import {t} from 'i18next';
-import manifest from 'manifest.json';
 
 // You can duplicate this step to represent different endings for this task
 // which are not "technical errors", such as "could not find the material".
@@ -11,11 +10,8 @@ export async function successStep(ctx: Context) {
 
   // Only add logic here if it is performing closure specific to this ending
 
-  await showSuccessNotice(ctx, {
-    title: manifest.name,
-    description: manifest.description,
-    subtitle: t('success.subtitle'),
+  await showUI.success(ctx, {
+    title: t('success.subtitle'),
     text: t('success.text'),
-    buttons: [{text: t('success.successButton'), value: 'ok'}],
   });
 }

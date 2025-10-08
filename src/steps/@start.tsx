@@ -1,4 +1,5 @@
-import {Context, showMessage} from '@matterway/sdk';
+import {Context} from '@matterway/sdk';
+import {showUI} from '@matterway/sdk/lib/UIv2';
 import {t} from 'i18next';
 import manifest from 'manifest.json';
 import {extractRequestDataStep} from './extractRequestDataStep';
@@ -13,7 +14,7 @@ import {updateMasterDataStep} from './updateMasterDataStep';
 export async function startStep(ctx: Context) {
   console.log('step: startStep');
 
-  await showMessage(ctx, {
+  await showUI.message(ctx, {
     title: manifest.name,
     description: manifest.description,
     text: t('start.text'),
