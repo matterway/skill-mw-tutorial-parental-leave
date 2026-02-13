@@ -16,8 +16,8 @@ Open the terminal<sup>\*</sup> and run the commands below to:
 
 ```bash
   cd parental-leave-tutorial-skill
-  yarn
-  yarn start
+  pnpm install
+  pnpm start
 ```
 
 Next:
