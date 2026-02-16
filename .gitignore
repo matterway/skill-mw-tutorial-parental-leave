@@ -2,7 +2,6 @@
 .env
 .env.*
 *.local
-.npmrc
 
 # Build artifacts
 node_modules
@@ -27,5 +26,6 @@ dist
 .DS_Store
 Thumbs.db
 
-# Additional entries
-
+# Testing SDK
+.yalc
+yalc.lock
